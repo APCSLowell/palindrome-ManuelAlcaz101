@@ -35,15 +35,24 @@ public void tester()
     }
   }
 }
-public boolean palindrome(String word)
-{
-  //your code here
-  return false;
-}
-public String reverse(String str)
-{
-    String sNew = new String();
-    //your code here
-    return sNew;
+    public boolean palindrome(String word) {
+        // Check if the word is equal to its reverse
+        String reversed = reverse(word); 
+        return word.equalsIgnoreCase(reversed); // Ignore case sensitivity
+    }
+
+    public String reverse(String str) {
+        String sNew = new String(); 
+        // Reverse the string using a loop
+        for (int i = str.length() - 1; i >= 0; i--) {
+            sNew += str.charAt(i);
+        }
+        return sNew;
+    }
+
+    public static void main(String[] args) {
+        PalindromeChecker checker = new PalindromeChecker();
+        checker.tester();
+    }
 }
 }
